@@ -1,0 +1,9 @@
+<h1> Bienvenue dans ta task manager </h1>
+<%= link_to "Add task", new_task_path %>
+<% @tasks.each do |task| %>
+<%= link_to task.title, task_path(task) %>
+<p>Task detail: <%= task.detail %></p>
+<%= link_to "Edit a task", edit_task_path(task) %>
+<%= link_to "Delete a task", task_path(task), method: :delete %>
+<hr>
+<% end %>
